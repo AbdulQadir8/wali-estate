@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { Play, CheckCircle2 } from 'lucide-react';
-import { SectionTitle } from '@/components/SectionTitle';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useState } from "react";
+import { Play, CheckCircle2 } from "lucide-react";
+import { SectionTitle } from "@/components/SectionTitle";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
-  'Daily updates on Allocation and Affidavit File Prices',
-  'Latest Balloting Results and market insights',
-  'Updated Drone Videos, Maps, and Transfer Expenses',
-  'Availability of Plots, Houses for Sale, Files Rates',
-  'Strong presence in the Dubai Real Estate market',
+  "Daily updates on Allocation and Affidavit File Prices",
+  "Latest Balloting Results and market insights",
+  "Updated Drone Videos, Maps, and Transfer Expenses",
+  "Availability of Plots, Houses for Sale, Files Rates",
+  "Strong presence in the Dubai Real Estate market",
 ];
 
 export function About() {
@@ -21,34 +21,37 @@ export function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Video/Image Side */}
-          <div 
+          <div
             className={`
               relative transition-all duration-1000
-              ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}
+              ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"}
             `}
           >
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl group">
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-gray-200 animate-pulse" />
               )}
-              
+
               <img
                 src="/images/about-video-thumb.jpg"
-                alt="MAAN Estate Property"
+                alt="WALI Estate Property"
                 className={`
                   w-full h-full object-cover transition-all duration-700
-                  ${imageLoaded ? 'opacity-100' : 'opacity-0'}
+                  ${imageLoaded ? "opacity-100" : "opacity-0"}
                 `}
                 onLoad={() => setImageLoaded(true)}
               />
-              
+
               {/* Play Button */}
               <button
                 onClick={() => setShowVideo(true)}
                 className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors"
               >
                 <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-gold">
-                  <Play className="w-8 h-8 text-black ml-1" fill="currentColor" />
+                  <Play
+                    className="w-8 h-8 text-black ml-1"
+                    fill="currentColor"
+                  />
                 </div>
               </button>
 
@@ -65,10 +68,10 @@ export function About() {
           </div>
 
           {/* Content Side */}
-          <div 
+          <div
             className={`
               transition-all duration-1000 delay-200
-              ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}
+              ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"}
             `}
           >
             <SectionTitle
@@ -79,14 +82,16 @@ export function About() {
 
             <div className="space-y-4 mb-8">
               <p className="text-gray-600 leading-relaxed">
-                <span className="font-semibold text-gray-900">#1 Authorized Real Estate Dealer</span> – 
-                DHA Lahore & Dubai Property Experts. Maan Estate is the leading name in 
-                Lahore real estate and Dubai property.
+                <span className="font-semibold text-gray-900">
+                  #1 Authorized Real Estate Dealer
+                </span>{" "}
+                – DHA Lahore & Dubai Property Experts. Wali Estate is the
+                leading name in Lahore real estate and Dubai property.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Recognized as the No.1 authorized dealer in DHA, we specialize in 
-                Files Rates, Today File Price, Affidavit, Allocation, and Plots for Sale 
-                across all major DHA phases.
+                Recognized as the No.1 authorized dealer in DHA, we specialize
+                in Files Rates, Today File Price, Affidavit, Allocation, and
+                Plots for Sale across all major DHA phases.
               </p>
             </div>
 
@@ -96,7 +101,7 @@ export function About() {
                 What We Do:
               </h4>
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={index}
                   className="flex items-start gap-3"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -108,11 +113,14 @@ export function About() {
             </div>
 
             <p className="text-gray-600 italic mb-8">
-              Connect with Maan Estate – Your reliable partner in real estate investment, 
-              house buying, and DHA file rates.
+              Connect with Wali Estate – Your reliable partner in real estate
+              investment, house buying, and DHA file rates.
             </p>
 
-            <a href="/about" className="btn-primary inline-flex items-center gap-2">
+            <a
+              href="/about"
+              className="btn-primary inline-flex items-center gap-2"
+            >
               Learn More About Us
             </a>
           </div>
@@ -121,7 +129,7 @@ export function About() {
 
       {/* Video Modal */}
       {showVideo && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={() => setShowVideo(false)}
         >

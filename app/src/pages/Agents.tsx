@@ -1,13 +1,13 @@
-import { MainLayout } from '@/layouts/MainLayout';
-import { AgentCard } from '@/components/AgentCard';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Search, Users } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { useState, useMemo, useEffect } from 'react';
-import { agentsApi, type Agent } from '@/lib/api';
+import { MainLayout } from "@/layouts/MainLayout";
+import { AgentCard } from "@/components/AgentCard";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Search, Users } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { useState, useMemo, useEffect } from "react";
+import { agentsApi, type Agent } from "@/lib/api";
 
 export function Agents() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [agents, setAgents] = useState<Agent[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,8 +21,8 @@ export function Agents() {
         const data = await agentsApi.getAgents();
         setAgents(data);
       } catch (err) {
-        setError('Failed to load agents.');
-        console.error('Error fetching agents:', err);
+        setError("Failed to load agents.");
+        console.error("Error fetching agents:", err);
       } finally {
         setLoading(false);
       }
@@ -32,10 +32,13 @@ export function Agents() {
   }, []);
 
   const filteredAgents = useMemo(() => {
-    return agents.filter((agent) =>
-      agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      agent.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      agent.specialties.some((s) => s.toLowerCase().includes(searchQuery.toLowerCase()))
+    return agents.filter(
+      (agent) =>
+        agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        agent.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        agent.specialties.some((s) =>
+          s.toLowerCase().includes(searchQuery.toLowerCase()),
+        ),
     );
   }, [agents, searchQuery]);
 
@@ -45,10 +48,13 @@ export function Agents() {
       <section className="relative py-24 bg-gray-900 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+              backgroundSize: "40px 40px",
+            }}
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -60,7 +66,7 @@ export function Agents() {
               Meet Our <span className="text-gold">Experts</span>
             </h1>
             <p className="text-lg text-gray-300 leading-relaxed">
-              Our team of experienced professionals is dedicated to helping you 
+              Our team of experienced professionals is dedicated to helping you
               navigate the DHA real estate market with confidence.
             </p>
           </div>
@@ -76,7 +82,9 @@ export function Agents() {
                 <Users className="w-7 h-7 text-gold" />
               </div>
               <div>
-                <p className="font-display text-2xl font-bold text-gray-900">{agents.length}</p>
+                <p className="font-display text-2xl font-bold text-gray-900">
+                  {agents.length}
+                </p>
                 <p className="text-sm text-gray-500">Expert Agents</p>
               </div>
             </div>
@@ -119,7 +127,7 @@ export function Agents() {
                   key={agent.id}
                   className={`
                     transition-all duration-700
-                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+                    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}
                   `}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
@@ -135,9 +143,7 @@ export function Agents() {
               <h3 className="font-display text-xl text-gray-900 mb-2">
                 No agents found
               </h3>
-              <p className="text-gray-500">
-                Try adjusting your search query
-              </p>
+              <p className="text-gray-500">Try adjusting your search query</p>
             </div>
           )}
         </div>
@@ -150,8 +156,9 @@ export function Agents() {
             Want to Join Our Team?
           </h2>
           <p className="text-gray-600 text-lg mb-8">
-            We're always looking for talented individuals who are passionate about real estate. 
-            If you're interested in joining MAAN Estate, we'd love to hear from you.
+            We're always looking for talented individuals who are passionate
+            about real estate. If you're interested in joining WALI Estate, we'd
+            love to hear from you.
           </p>
           <a href="/contact" className="btn-primary">
             Contact Us

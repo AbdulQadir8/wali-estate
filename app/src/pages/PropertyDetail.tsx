@@ -1,12 +1,21 @@
-import { useState, useEffect } from 'react';
-import { MainLayout } from '@/layouts/MainLayout';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { MainLayout } from "@/layouts/MainLayout";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
-  MapPin, Bed, Bath, Square, Phone, Mail,
-  Share2, Heart, ChevronLeft, ChevronRight, CheckCircle2
-} from 'lucide-react';
-import { propertiesApi, type Property } from '@/lib/api';
+  MapPin,
+  Bed,
+  Bath,
+  Square,
+  Phone,
+  Mail,
+  Share2,
+  Heart,
+  ChevronLeft,
+  ChevronRight,
+  CheckCircle2,
+} from "lucide-react";
+import { propertiesApi, type Property } from "@/lib/api";
 
 export function PropertyDetail() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -17,7 +26,7 @@ export function PropertyDetail() {
   const [error, setError] = useState<string | null>(null);
 
   // Get property ID from URL
-  const propertyId = window.location.pathname.split('/').pop() || '';
+  const propertyId = window.location.pathname.split("/").pop() || "";
 
   useEffect(() => {
     const fetchProperty = async () => {
@@ -27,8 +36,8 @@ export function PropertyDetail() {
         const data = await propertiesApi.getPropertyById(propertyId);
         setProperty(data);
       } catch (err) {
-        setError('Failed to load property details.');
-        console.error('Error fetching property:', err);
+        setError("Failed to load property details.");
+        console.error("Error fetching property:", err);
       } finally {
         setLoading(false);
       }
@@ -75,14 +84,14 @@ export function PropertyDetail() {
   }
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => 
-      prev === property.images.length - 1 ? 0 : prev + 1
+    setCurrentImageIndex((prev) =>
+      prev === property.images.length - 1 ? 0 : prev + 1,
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => 
-      prev === 0 ? property.images.length - 1 : prev - 1
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? property.images.length - 1 : prev - 1,
     );
   };
 
@@ -92,9 +101,13 @@ export function PropertyDetail() {
       <div className="bg-gray-50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <a href="/" className="hover:text-gold transition-colors">Home</a>
+            <a href="/" className="hover:text-gold transition-colors">
+              Home
+            </a>
             <span>/</span>
-            <a href="/listings" className="hover:text-gold transition-colors">Listings</a>
+            <a href="/listings" className="hover:text-gold transition-colors">
+              Listings
+            </a>
             <span>/</span>
             <span className="text-gray-900 line-clamp-1">{property.title}</span>
           </div>
@@ -109,7 +122,7 @@ export function PropertyDetail() {
             alt={property.title}
             className="w-full h-full object-cover"
           />
-          
+
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -139,7 +152,7 @@ export function PropertyDetail() {
           {/* Badges */}
           <div className="absolute top-4 left-4 flex gap-2">
             <Badge className="bg-gold text-black font-display text-xs uppercase tracking-wider">
-              For {property.property_type === 'sale' ? 'Sale' : 'Rent'}
+              For {property.property_type === "sale" ? "Sale" : "Rent"}
             </Badge>
             {property.is_hot && (
               <Badge className="bg-red-500 text-white font-display text-xs uppercase tracking-wider">
@@ -155,15 +168,15 @@ export function PropertyDetail() {
 
           {/* Action Buttons */}
           <div className="absolute top-4 right-4 flex gap-2">
-            <button 
+            <button
               onClick={() => setIsLiked(!isLiked)}
               className={`
                 w-10 h-10 rounded-full flex items-center justify-center
                 transition-all duration-300
-                ${isLiked ? 'bg-red-500 text-white' : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30'}
+                ${isLiked ? "bg-red-500 text-white" : "bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"}
               `}
             >
-              <Heart className={`w-5 h-5 ${isLiked ? 'fill-current' : ''}`} />
+              <Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
             </button>
             <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-colors">
               <Share2 className="w-5 h-5" />
@@ -201,7 +214,9 @@ export function PropertyDetail() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Bedrooms</p>
-                      <p className="font-display text-xl font-bold">{property.bedrooms}</p>
+                      <p className="font-display text-xl font-bold">
+                        {property.bedrooms}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -212,7 +227,9 @@ export function PropertyDetail() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Bathrooms</p>
-                      <p className="font-display text-xl font-bold">{property.bathrooms}</p>
+                      <p className="font-display text-xl font-bold">
+                        {property.bathrooms}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -223,7 +240,9 @@ export function PropertyDetail() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500">Area</p>
-                      <p className="font-display text-xl font-bold">{property.area}</p>
+                      <p className="font-display text-xl font-bold">
+                        {property.area}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -270,8 +289,12 @@ export function PropertyDetail() {
                         <Phone className="w-8 h-8 text-gold" />
                       </div>
                       <div>
-                        <p className="font-display font-bold text-gray-900">MAAN Estate Agent</p>
-                        <p className="text-sm text-gray-500">Property Consultant</p>
+                        <p className="font-display font-bold text-gray-900">
+                          WALI Estate Agent
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          Property Consultant
+                        </p>
                       </div>
                     </div>
 
@@ -315,24 +338,30 @@ export function PropertyDetail() {
                 {showContactForm && (
                   <form className="space-y-4 pt-6 border-t">
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Your Name</label>
-                      <input 
-                        type="text" 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
                         placeholder="Enter your name"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Your Phone</label>
-                      <input 
-                        type="tel" 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Your Phone
+                      </label>
+                      <input
+                        type="tel"
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
                         placeholder="Enter your phone"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Message</label>
-                      <textarea 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Message
+                      </label>
+                      <textarea
                         className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
                         rows={3}
                         placeholder="I'm interested in this property..."
