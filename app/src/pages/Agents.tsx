@@ -9,22 +9,15 @@ import { agentsApi, type Agent } from "@/lib/api";
 export function Agents() {
   const [searchQuery, setSearchQuery] = useState("");
   const [agents, setAgents] = useState<Agent[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   useEffect(() => {
     const fetchAgents = async () => {
       try {
-        setLoading(true);
-        setError(null);
         const data = await agentsApi.getAgents();
         setAgents(data);
       } catch (err) {
-        setError("Failed to load agents.");
         console.error("Error fetching agents:", err);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -91,12 +84,12 @@ export function Agents() {
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
                 <span className="font-display text-xl font-bold text-gold">
-                  {agents.reduce((acc, agent) => acc + agent.listingsCount, 0)}
+                  {agents.length}
                 </span>
               </div>
               <div>
                 <p className="font-display text-2xl font-bold text-gray-900">
-                  {agents.reduce((acc, agent) => acc + agent.listingsCount, 0)}+
+                  {agents.length}+
                 </p>
                 <p className="text-sm text-gray-500">Active Listings</p>
               </div>

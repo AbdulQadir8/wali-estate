@@ -13,22 +13,15 @@ export function Blog() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const { ref, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        setLoading(true);
-        setError(null);
         const response = await blogApi.getPosts(1, 50);
         setPosts(response.items);
       } catch (err) {
-        setError('Failed to load blog posts.');
         console.error('Error fetching blog posts:', err);
-      } finally {
-        setLoading(false);
       }
     };
 
