@@ -17,7 +17,7 @@ python run.py --seed
 
 ### 2. Frontend Setup
 ```bash
-cd app
+cd frontend
 npm install
 npm run dev
 ```
@@ -41,7 +41,7 @@ npm run dev
 
 ```
 Wali_Estate/
-├── app/                    # React Frontend (Vite + TypeScript)
+├── frontend/              # React Frontend (Vite + TypeScript)
 │   ├── src/
 │   │   ├── pages/         # Page components
 │   │   ├── components/    # Reusable components

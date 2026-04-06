@@ -36,7 +36,7 @@ The backend will start at `http://localhost:8000`
 
 1. Navigate to the frontend directory:
 ```bash
-cd app
+cd frontend
 ```
 
 2. Install dependencies:

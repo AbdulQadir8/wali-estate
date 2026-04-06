@@ -4,7 +4,7 @@ Successfully connected the Wali Estate frontend to the FastAPI backend.
 
 ### Changes Made:
 
-**1. API Service Layer (`/app/src/lib/api.ts`)**
+**1. API Service Layer (`/frontend/src/lib/api.ts`)**
 - Created centralized API functions for all endpoints
 - Type-safe interfaces matching backend models
 - Helper functions for query string building
@@ -50,7 +50,7 @@ Server runs at: `http://localhost:8000`
 
 **Frontend:**
 ```bash
-cd app
+cd frontend
 npm install
 npm run dev
 ```

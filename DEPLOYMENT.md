@@ -59,7 +59,7 @@ git push -u origin main
 3. Import your GitHub repository
 4. Configure:
    - **Framework Preset:** Vite
-   - **Root Directory:** `app`
+   - **Root Directory:** `frontend`
    - **Build Command:** `npm run build`
    - **Output Directory:** `dist`
    - **Install Command:** `npm install`

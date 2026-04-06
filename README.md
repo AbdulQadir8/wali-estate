@@ -25,7 +25,7 @@ Full-stack real estate platform for MAAN Estate - DHA Lahore properties.
 
 ```
 Wali_Estate/
-├── app/                    # React Frontend
+├── frontend/              # React Frontend
 │   ├── src/
 │   │   ├── pages/         # Page components
 │   │   ├── components/    # Reusable components
@@ -59,7 +59,7 @@ Backend: http://localhost:8000
 
 **Frontend:**
 ```bash
-cd app
+cd frontend
 npm install
 npm run dev
 ```

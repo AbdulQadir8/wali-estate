@@ -7,7 +7,7 @@ Successfully connected the Wali Estate React frontend to the FastAPI backend.
 ## 🎯 What Was Done
 
 ### 1. Created API Service Layer
-**File:** `app/src/lib/api.ts`
+**File:** `frontend/src/lib/api.ts`
 - Centralized API functions for all endpoints
 - Type-safe TypeScript interfaces matching backend models
 - Helper functions for query string building
@@ -74,7 +74,7 @@ python run.py --seed
 
 ### Terminal 2 - Frontend
 ```bash
-cd app
+cd frontend
 npm install
 npm run dev
 ```
@@ -126,9 +126,9 @@ GET  /api/v1/auth/me                  # Current user
 ## 📁 Files Created/Modified
 
 **Created:**
-- `app/src/lib/api.ts` - API service layer
-- `app/src/sections/home/FeaturedProperties.tsx`
-- `app/.env` & `app/.env.example`
+- `frontend/src/lib/api.ts` - API service layer
+- `frontend/src/sections/home/FeaturedProperties.tsx`
+- `frontend/.env` & `frontend/.env.example`
 - `backend/.env.example`
 - `.gitignore`
 - `README.md`, `QUICKSTART.md`, `SETUP.md`
