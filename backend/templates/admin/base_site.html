@@ -1,0 +1,19 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | MAAN Estate Admin{% endblock %}
+
+{% block branding %}
+<div class="maan-brand">
+  <div class="maan-brand-mark">ME</div>
+  <div>
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">MAAN Estate Admin</a></h1>
+    <p>DHA Lahore property operations</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'admin/css/maan_admin.css' %}">
+{% endblock %}

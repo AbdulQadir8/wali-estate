@@ -1,35 +1,33 @@
-"""
-Production-ready run script for Render deployment
-"""
+"""Production startup helper for Django deployments."""
 import os
+import subprocess
 import sys
 
-def main():
-    """Run the application"""
-    # Check if we should seed the database
-    should_seed = os.getenv('SEED_DATABASE', 'false').lower() == 'true'
 
-    if should_seed and '--seed' not in sys.argv:
-        print("🌱 Seeding database on first deployment...")
-        from seed_data import main as seed_main
-        try:
-            seed_main()
-        except Exception as e:
-            print(f"⚠️  Seeding failed (may already be seeded): {e}")
+def run_command(command: list[str]) -> None:
+    subprocess.run(command, check=True)
 
-    # Start the server
-    print("🚀 Starting FastAPI server...")
-    import uvicorn
 
-    # Get port from environment (Render provides this)
-    port = int(os.getenv('PORT', 8000))
+def main() -> None:
+    port = os.getenv("PORT", "8000")
 
-    uvicorn.run(
-        "app.main:app",
-        host="0.0.0.0",
-        port=port,
-        log_level="info"
+    run_command([sys.executable, "manage.py", "migrate", "--noinput"])
+    run_command([sys.executable, "manage.py", "collectstatic", "--noinput"])
+
+    if os.getenv("SEED_DATABASE", "false").lower() == "true":
+        run_command([sys.executable, "manage.py", "seed_data"])
+
+    run_command(
+        [
+            "gunicorn",
+            "config.wsgi:application",
+            "--bind",
+            f"0.0.0.0:{port}",
+            "--workers",
+            os.getenv("WEB_CONCURRENCY", "3"),
+        ]
     )
+
 
 if __name__ == "__main__":
     main()

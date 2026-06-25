@@ -143,15 +143,15 @@ export function Hero() {
         `}
       >
         <a
-          href="tel:+923334023007"
+          href="tel:+923014879005"
           className="flex items-center gap-2 text-white hover:text-gold transition-colors"
         >
           <Phone className="w-4 h-4" />
-          <span className="text-sm font-medium">Call: 0333-4023007</span>
+          <span className="text-sm font-medium">Call: 0301-4879005</span>
         </a>
         <span className="text-white/30">|</span>
         <a
-          href="https://wa.me/923334023007"
+          href="https://wa.me/923014879005"
           className="flex items-center gap-2 text-white hover:text-green-400 transition-colors"
         >
           <span className="text-sm font-medium">WhatsApp</span>

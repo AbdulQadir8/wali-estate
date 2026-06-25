@@ -300,7 +300,7 @@ export function PropertyDetail() {
 
                     <div className="space-y-3 mb-6">
                       <a
-                        href="tel:+923334023007"
+                        href="tel:+923014879005"
                         className="w-full btn-primary flex items-center justify-center gap-2"
                       >
                         <Phone className="w-5 h-5" />
@@ -318,7 +318,7 @@ export function PropertyDetail() {
                 ) : (
                   <div className="space-y-3 mb-6">
                     <a
-                      href="tel:+923334023007"
+                      href="tel:+923014879005"
                       className="w-full btn-primary flex items-center justify-center gap-2"
                     >
                       <Phone className="w-5 h-5" />

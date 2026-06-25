@@ -63,7 +63,7 @@ export function ContactCTA() {
             {/* Contact Info */}
             <div className="space-y-4 mb-8">
               <a
-                href="tel:+923334023007"
+                href="tel:+923014879005"
                 className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow group"
               >
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold transition-colors">
@@ -71,7 +71,7 @@ export function ContactCTA() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Call Us</p>
-                  <p className="font-medium text-gray-900">+92 333 4023007</p>
+                  <p className="font-medium text-gray-900">+92 301 4879005</p>
                 </div>
               </a>
 

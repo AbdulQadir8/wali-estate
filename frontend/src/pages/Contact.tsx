@@ -192,7 +192,7 @@ export function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+92 300 1234567"
+                        placeholder="+92 301 4879005"
                       />
                     </div>
                     <div className="space-y-2">
@@ -241,7 +241,7 @@ export function Contact() {
                   <div className="text-center p-8">
                     <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
                     <h3 className="font-display text-xl font-bold text-gray-900 mb-2">
-                      wali Estate Office
+                      Wali Estate Office
                     </h3>
                     <p className="text-gray-600 mb-4">
                       63-MB, Phase-6, DHA Lahore
@@ -273,7 +273,7 @@ export function Contact() {
             updates on DHA properties.
           </p>
           <a
-            href="https://wa.me/923334023007"
+            href="https://wa.me/923014879005"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-lg font-display uppercase tracking-wider hover:bg-gray-800 transition-colors"

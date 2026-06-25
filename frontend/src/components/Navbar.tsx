@@ -93,11 +93,11 @@ export function Navbar() {
           </div>
           <div className="flex items-center gap-4 ml-auto">
             <a
-              href="tel:+923334023007"
+              href="tel:+923014879005"
               className="flex items-center gap-2 hover:text-gold transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">+92 333 4023007</span>
+              <span className="hidden sm:inline">+92 301 4879005</span>
             </a>
             <span className="text-gray-600 hidden sm:inline">|</span>
             <a
@@ -126,7 +126,7 @@ export function Navbar() {
             {/* Logo */}
             <a href="/" className="flex items-center gap-2">
               <span className="font-display text-2xl md:text-3xl font-bold tracking-tight">
-                wali
+                WAlI
               </span>
               <span className="font-accent text-gold text-lg hidden sm:inline">
                 Estate
@@ -169,7 +169,7 @@ export function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <a href="tel:+923334023007" className="btn-primary text-sm">
+              <a href="tel:+923014879005" className="btn-primary text-sm">
                 Call Now
               </a>
             </div>
@@ -250,7 +250,7 @@ export function Navbar() {
             {/* Mobile CTA */}
             <div className="mt-8 pt-6 border-t border-gray-100">
               <a
-                href="tel:+923334023007"
+                href="tel:+923014879005"
                 className="btn-primary w-full text-center flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" />

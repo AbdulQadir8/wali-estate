@@ -1,0 +1,155 @@
+:root {
+  --primary: #164b60;
+  --secondary: #1b6b68;
+  --accent: #c49a45;
+  --primary-fg: #ffffff;
+  --body-bg: #f6f7f4;
+  --body-fg: #1d2b2f;
+  --body-quiet-color: #637174;
+  --hairline-color: #d8ded9;
+  --border-color: #d8ded9;
+  --link-fg: #155e75;
+  --link-hover-color: #0f766e;
+  --button-bg: #164b60;
+  --button-hover-bg: #1b6b68;
+  --default-button-bg: #1b6b68;
+  --default-button-hover-bg: #164b60;
+}
+
+body {
+  background: var(--body-bg);
+}
+
+#header {
+  min-height: 72px;
+  background: linear-gradient(90deg, #123744, #1b6b68);
+  box-shadow: 0 10px 30px rgba(18, 55, 68, 0.18);
+}
+
+.maan-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.maan-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #f8f3e4;
+  color: #164b60;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+#branding h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+#branding p {
+  margin: 3px 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 12px;
+}
+
+#content {
+  padding: 28px;
+}
+
+.module,
+.inline-group,
+div.breadcrumbs,
+#changelist,
+.submit-row {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(29, 43, 47, 0.07);
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  background: #164b60;
+  color: #fff;
+  font-weight: 700;
+}
+
+table thead th {
+  background: #eef3ef;
+}
+
+.object-tools a,
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.admin-thumb {
+  width: 78px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+}
+
+.admin-muted {
+  color: var(--body-quiet-color);
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.admin-badge-neutral {
+  background: #e8ece8;
+  color: #354247;
+}
+
+.admin-badge-success {
+  background: #dff3e7;
+  color: #17633b;
+}
+
+.admin-badge-warning {
+  background: #fff1cc;
+  color: #805d00;
+}
+
+.admin-badge-danger {
+  background: #ffe0dc;
+  color: #9a2e1f;
+}
+
+.admin-badge-info {
+  background: #dff0f7;
+  color: #155e75;
+}
+
+.json-field {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (max-width: 767px) {
+  #content {
+    padding: 16px;
+  }
+
+  .maan-brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+}
