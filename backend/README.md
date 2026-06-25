@@ -72,3 +72,13 @@ Run with:
 ```bash
 uv run python start.py
 ```
+
+## Render
+
+The root `render.yaml` starts the service with migrations and seed data before Gunicorn:
+
+```bash
+uv run python manage.py migrate --noinput && uv run python manage.py seed_data && uv run gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
+```
+
+That keeps a new Neon database ready for Django Admin and the public API after deploy.
